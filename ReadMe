@@ -1,0 +1,74 @@
+---------------------------------------------------------------------------------------------------
+TEAM 10
+Github repository: https://github.com/jk-kevin/COMP3004---Team-10
+---------------------------------------------------------------------------------------------------
+Members:
+    Jason Nguyen
+        - Worked on Record, Device, MainWindow. Implemented timer, adding records, low battery, freeing record memory. 
+        - Program logic
+        - Traceability Matrix, UML diagram, use cases, use case diagram.
+    Alexander Iwoh
+        - Record button, Record UI display, Apply to skin. 
+        - View and Record class implementation.
+        - UML diagram.
+        - Program logic.
+        - Debugging and documentation.
+    Kevin Vuong
+        - UI, LEDs, Current buttons, Timer button, Waveform button, Frequency button, Idle timer, Timer resume period
+        - Program logic
+        - Sequence Diagrams, use cases
+    Sadiq Ali
+        - Implemented battery, power, toggle skin and fault functions
+        - Program logic
+        - UI debugging
+        - Sequence diagrams, use cases
+ 
+---------------------------------------------------------------------------------------------------
+The program is a simulation of the The Alpha-Stim CES device.
+Implementation and testing are in C++ using the Qt framework in QtCreator.
+When run the user is presented with a screen with various buttons.
+There are buttons to change the Waveform, frequency, and timer variables,
+up/down arrows to change the current (in milliamps), and power button.
+There is also a Record button that when activated records the session data when
+the device is touching the patient (check the "Apply to Skin" checkbox): the Record
+button must be activated when the checkbox is activated to start a recording then
+the recording ends when the checkbox is unchecked.
+---------------------------------------------------------------------------------------------------
+Included Files:
+mainwindow.ui, mainwindow.h, mainwindow.cc      - Handles the display. Is a View and Control object.
+Device.h, Device.cc                             - Stores the state of the device.
+Record.h, Record.cc                             - Stores the data for a recording.
+---------------------------------------------------------------------------------------------------
+Tested scenarios:
+    ON/OFF Switch:
+    Run the simulator and press the power button.
+
+    Check when electrodes are in contact with skin, pauses, and resumes timer:
+    Turn on the device, then check the "apply to skin" checkbox.
+
+    Three frequency options of 0.5Hz, 77Hz, and 100Hz:
+    Turn on the device and press the frequency button, observe frequency options on screen.
+
+    Three waveform options of Alpha, Betta, and Gamma:
+    Turn on the device and press the waveform button, observe waveform options on screen.
+
+    20, 40 or 60 minutre countdown cycles to auto -off:
+    Turn on the device and press the timer button, observer timer options on screen.
+
+    Large timer display. Waveform cycle starts when electrodes touch skin:
+    Turn on the device and choose a timer option. Check apply to skin checkbox and observe.
+
+    0 - 500 microampere current control (1-10), +50 when incrementing and -100 when decrementing:
+    Turn on device and observe current meter on screen. Press up or down buttons to change current.
+
+    30 minute auto -off when not in use:
+    Power on device and wait for shutdown.
+
+    Battery charge indicator. Device issues a warning at 5% charge and shuts down at 2% after another warning:
+    Charge battery percentage on the battery percentage spinbox, or use the device until battery is low.
+
+    User can choose to record a therapy and add to history of treatment:
+    Starts a session and press the record button.
+
+    Automatically and permanently disables itself should a single fault develop within the device causing the current to exceed 700uA:
+    Turn on the device and press the fault checkbox.
