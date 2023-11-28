@@ -4,7 +4,8 @@ Github repository: https://github.com/jk-kevin/COMP3004---Team-10
 ---------------------------------------------------------------------------------------------------
 Members:
     Jason Nguyen
-        - Worked on Record, Device, MainWindow. Implemented timer, adding records, low battery, freeing record memory. 
+        - Worked on Record, Device, MainWindow. 
+        - Implemented timer, adding records, low battery, freeing record memory. 
         - Program logic
         - Traceability Matrix, UML diagram, use cases, use case diagram.
     Alexander Iwoh
